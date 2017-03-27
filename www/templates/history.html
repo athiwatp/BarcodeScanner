@@ -1,0 +1,15 @@
+<ion-view title="History" id="page3">
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-icon icon ion-trash-b" ng-click="clearStorage()"></button>
+  </ion-nav-buttons>
+  <ion-content padding="false" class="has-header" ng-init="loadScans()">
+    <div class="list">
+      <a class="item item-icon-right" ng-repeat="scan in scan_list | orderBy: 'date':true" ng-click="shareScan($index)">
+        <h2>{{scan.text}}</h2>
+        <p>{{scan.format}}</p>
+        <p>{{scan.date | date:'short'}}</p>
+        <i class="icon ion-share assertive"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
